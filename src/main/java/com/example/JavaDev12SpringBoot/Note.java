@@ -9,6 +9,14 @@ public class Note {
     private String title;
     private String content;
 
+    public Note(UUID id, String title, String content) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+    }
+    public Note(){
+    }
+
     public UUID getId() {
         return id;
     }
