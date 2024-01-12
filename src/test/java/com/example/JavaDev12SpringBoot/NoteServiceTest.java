@@ -4,6 +4,7 @@ import com.example.JavaDev12SpringBoot.service.NoteService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -46,10 +47,10 @@ public class NoteServiceTest {
 
         noteService.update(updatedNote);
 
-        Note checkNote = noteService.getNoteById(noteId);
+        Optional<Note> checkNote = noteService.getNoteById(noteId);
 
-        assertEquals("New Title",checkNote.getTitle());
-        assertEquals("New Content", checkNote.getContent());
+        assertEquals("New Title",checkNote.get().getTitle());
+        assertEquals("New Content", checkNote.get().getContent());
     }
 
     @Test

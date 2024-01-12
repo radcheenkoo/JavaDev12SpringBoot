@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -58,11 +59,11 @@ public class TestService {
 
         noteService.update(updatedNote);
 
-        Note checkNote = noteService.getNoteById(noteId);
+        Optional<Note> checkNote = noteService.getNoteById(noteId);
 
         log.info("testUpdateNote ==>->>> ");
-        log.info(String.valueOf(("New Title" == checkNote.getTitle())));
-        log.info(String.valueOf(("New Content" == checkNote.getContent())));
+        log.info(String.valueOf(("New Title" == checkNote.get().getTitle())));
+        log.info(String.valueOf(("New Content" == checkNote.get().getContent())));
 
     }
 

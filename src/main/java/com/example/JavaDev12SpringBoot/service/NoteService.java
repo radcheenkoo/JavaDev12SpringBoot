@@ -3,10 +3,7 @@ package com.example.JavaDev12SpringBoot.service;
 import com.example.JavaDev12SpringBoot.Note;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class NoteService {
@@ -42,14 +39,9 @@ public class NoteService {
                 return;
             }
         }
-        throw new NullPointerException("Нотатки не знайдено");
+        throw new NoSuchElementException("Нотатки не знайдено");
     }
-    public Note getNoteById(UUID id){
-        for (Note n : notes) {
-            if (n.getId().equals(id)){
-                return n;
-            }
-        }
-        return null;
+    public Optional<Note> getNoteById(UUID id){
+        return notes.stream().filter(note -> note.getId().equals(id)).findFirst();
     }
 }
