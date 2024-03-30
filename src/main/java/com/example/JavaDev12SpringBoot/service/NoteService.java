@@ -1,6 +1,6 @@
 package com.example.JavaDev12SpringBoot.service;
 
-import com.example.JavaDev12SpringBoot.Note;
+import com.example.JavaDev12SpringBoot.model.Note;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

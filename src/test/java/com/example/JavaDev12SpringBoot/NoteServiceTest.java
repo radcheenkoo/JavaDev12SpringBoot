@@ -1,5 +1,6 @@
 package com.example.JavaDev12SpringBoot;
 
+import com.example.JavaDev12SpringBoot.model.Note;
 import com.example.JavaDev12SpringBoot.service.NoteService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
